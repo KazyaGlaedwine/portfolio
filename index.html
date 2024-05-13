@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+<title>Home</title>
+
+<!-- Using Howler.js from a CDN -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"></script>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .video-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        video {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+            pointer-events: none; /* Prevents the video from being clickable */
+        }
+
+        .navbar {
+            overflow: hidden;
+            background-color: rgba(0, 0, 0, 0.5); /* Added background color with opacity */
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1; /* Set a higher z-index to appear above the video */
+        }
+
+        .navbar a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        .navbar a:hover {
+            background-color: #111;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="video-background">
+	<!-- Credit / https://motionbgs.com/retro-city-->
+        <video autoplay muted loop poster="cityBackground.png">
+            <source src="cityBackground.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <div class="navbar">
+        <a class="active" href="index.html">Home</a>
+		<a href="#">2D Art / Illustration</a>
+        <a href="#">3D Modeling</a>
+        <a href="#">Game Development</a>
+        <a href="#resume">Resume</a>
+        <a href="#contactme">Contact Me</a>
+    </div>
+	
+<audio id="backgroundMusic" autoplay loop>
+    <source src="bgm/Rainy.mp3" type="audio/mp3"> <!-- Use "audio/mpeg" for MP3 files -->
+</audio>
+
+<script>
+function playAudio() {
+            const sound = new Howl({
+                src: ['bgm/Rainy.mp3'], // Path to your MP3 file
+                autoplay: true,
+                loop: true,
+                volume: 0.5, // Adjust volume as needed (0.0 to 1.0)
+                onend: function() {
+                    console.log('Audio ended'); // Optional callback when audio ends
+                },
+                onload: function() {
+                    console.log('Audio loaded'); // Optional callback when audio is loaded
+                },
+                onloaderror: function(error) {
+                    console.error('Audio load error:', error); // Optional callback for load errors
+                }
+            });
+        }
+
+        // Wait for the DOM content to be fully loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            playAudio(); // Call the playAudio function when DOMContentLoaded event fires
+        });
+</script>
+
+</body>
+
+</html>
