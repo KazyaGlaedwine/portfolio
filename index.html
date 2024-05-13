@@ -57,11 +57,6 @@
 </head>
 
 <body>
-	<div id="audioPlayer">
-        <button id="playButton">Play Music</button>
-    </div>
-	
-	<div id="content">
     <div class="video-background">
 	<!-- Credit / https://motionbgs.com/retro-city-->
         <video autoplay muted loop poster="cityBackground.png">
@@ -77,49 +72,33 @@
         <a href="#resume">Resume</a>
         <a href="#contactme">Contact Me</a>
     </div>
-	</div>
 	
-
+<audio id="backgroundMusic" autoplay loop>
+    <source src="bgm/Rainy.mp3" type="audio/mp3"> <!-- Use "audio/mpeg" for MP3 files -->
+</audio>
 
 <script>
-        const audioPlayer = document.getElementById('audioPlayer');
-        const playButton = document.getElementById('playButton');
-        let audioContext = null;
-
-        function playAudio() {
+function playAudio() {
             const sound = new Howl({
-                src: ['bgm/Rainy.mp3'], // Update with your audio file URL
+                src: ['bgm/Rainy.mp3'], // Path to your MP3 file
                 autoplay: true,
                 loop: true,
-                volume: 0.5,
+                volume: 0.5, // Adjust volume as needed (0.0 to 1.0)
                 onend: function() {
-                    console.log('Audio ended');
+                    console.log('Audio ended'); // Optional callback when audio ends
                 },
                 onload: function() {
-                    console.log('Audio loaded');
+                    console.log('Audio loaded'); // Optional callback when audio is loaded
                 },
                 onloaderror: function(error) {
-                    console.error('Audio load error:', error);
+                    console.error('Audio load error:', error); // Optional callback for load errors
                 }
             });
         }
 
-        // Event listener for button click
-        playButton.addEventListener('click', function() {
-            if (audioContext && audioContext.state === 'suspended') {
-                audioContext.resume().then(() => {
-                    console.log('AudioContext resumed');
-                    playAudio();
-                });
-            } else {
-                playAudio();
-            }
-        });
-
-        // Create AudioContext after user gesture (button click)
-        playButton.addEventListener('click', function() {
-            audioContext = new (window.AudioContext || window.webkitAudioContext)();
-            console.log('AudioContext created');
+        // Wait for the DOM content to be fully loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            playAudio(); // Call the playAudio function when DOMContentLoaded event fires
         });
 </script>
 
