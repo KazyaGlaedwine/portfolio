@@ -53,6 +53,27 @@
             background-color: #111;
         }
 
+	.slideshow-container {
+	    width: 100%;
+	    overflow: hidden;
+	    position: relative;
+	}
+	
+	.slideshow {
+	    display: flex;
+	    width: 100%;
+	}
+	
+	.slide {
+	    min-width: 100%;
+	    transition: transform 0.5s ease-in-out;
+	}
+	
+	.slide img {
+	    width: 100%;
+	    display: block;
+	}
+	    
     </style>
 </head>
 
@@ -73,11 +94,24 @@
         <a href="#contactme">Contact Me</a>
     </div>
 	
+	<div class="slideshow-container">
+		<div class="slideshow">
+            <div class="slide"><img src="image1.jpg" alt="Image 1"></div>
+            <div class="slide"><img src="image2.jpg" alt="Image 2"></div>
+            <div class="slide"><img src="image3.jpg" alt="Image 3"></div>
+            <!-- Add more slides as needed -->
+		</div>
+	</div>
 <audio id="backgroundMusic" autoplay loop>
     <source src="bgm/Rainy.mp3" type="audio/mp3"> <!-- Use "audio/mpeg" for MP3 files -->
 </audio>
 
 <script>
+const slideshow = document.querySelector('.slideshow');
+const slides = document.querySelectorAll('.slide');
+let currentIndex = 0;
+const slideWidth = slides[0].clientWidth;
+	
 function playAudio() {
             const sound = new Howl({
                 src: ['bgm/Rainy.mp3'], // Path to your MP3 file
@@ -100,6 +134,16 @@ function playAudio() {
         document.addEventListener('DOMContentLoaded', function() {
             playAudio(); // Call the playAudio function when DOMContentLoaded event fires
         });
+
+function showNextSlide() {
+    currentIndex++;
+    if (currentIndex >= slides.length) {
+        currentIndex = 0;
+    }
+    slideshow.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+}
+
+setInterval(showNextSlide, 3000); // Change slide every 3 seconds
 </script>
 
 </body>
