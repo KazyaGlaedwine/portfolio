@@ -101,6 +101,22 @@
             display: block;
             object-fit: contain; /* Contain within the slide */
         }
+
+	    .flex-container {
+  display: flex;
+  background-color: DodgerBlue;
+}
+
+.flex-container > div {
+  background-color: #f1f1f1;
+  margin: 10px;
+  padding: 20px;
+  font-size: 30px;
+}
+
+	    h1 {
+  font-size: 30px;
+}
     </style>
 </head>
 
@@ -137,6 +153,29 @@
         </div>
     </div>
 
+<br>
+	<h1>Home</h1>
+	<h2>2D Art / Illustration</h2>
+	<div class="flex-container">
+  <div>1</div>
+  <div>2</div>
+  <div>3</div>  
+</div>
+	<h2>3D Modeling</h2>
+	<div class="flex-container">
+  <div>1</div>
+  <div>2</div>
+  <div>3</div>  
+</div>
+	<h2>Game Development</h2>
+	<div class="flex-container">
+  <div>1</div>
+  <div>2</div>
+  <div>3</div>  
+</div>
+		
+	
+	
     <audio id="backgroundMusic" autoplay loop>
         <source src="bgm/Rainy.mp3" type="audio/mp3">
         <!-- Use "audio/mpeg" for MP3 files -->
