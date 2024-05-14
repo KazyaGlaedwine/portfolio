@@ -114,6 +114,13 @@
   padding: 20px;
   font-size: 30px;
 }
+.clock-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
 .clock {
     font-size: 2em; /* Specific font size in pixels */
     color: white;
@@ -203,9 +210,11 @@ h2 {
 
 <br>
 	<h1>Home</h1>
-	<div class="clock" id="clock">
-        00:00:00
-    	</div>
+<div class="clock-container">
+        <div class="clock" id="clock">
+            00:00:00
+        </div>
+    </div>
 	<h2>2D Art / Illustration</h2>
 	<div class="flex-container">
   <div>1</div>
