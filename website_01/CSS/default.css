@@ -1,0 +1,351 @@
+/* Navigation */
+
+.navBar{
+	overflow: visible;
+	font-size: 35px;
+}
+
+.navBar a, 
+.navbar .dropbtn {
+        padding: 8px 8px 8px 32px;
+        text-decoration: none;
+        font-size: 25px;
+        color: #818181;
+        display: block;
+        transition: 0.3s;
+        float: left;
+}
+
+	.navBar a:hover 
+	.navBar .dropbtn: hover{
+		background-color: #f1f1f1;
+	}
+
+	.navBar a.active {
+		background-color: #04AA6D;
+		color: white;
+	}
+	
+	.navBar .icon {
+		display:none;
+	}
+	
+@media screen and (max-width: 600px) {
+	.navBar a:not(:first-child) {display: none;}
+	.navBar a.icon {
+		float: right;
+		display: block;
+	}
+	.navBar.responsive {position: relative;}
+	.navBar.responsive .icon {
+		position: absolute;
+		right: 0;
+		top: 0;
+	}
+	.navBar.responsive a {
+		float: none;
+		display: block;
+		text-align: left;
+	}
+}
+
+.dropbtn {
+	padding: 8px 8px 8px 32px;
+	text-decoration: none;
+	font-size: 25px;
+	color: #818181;
+	display: block;
+	transition: 0.3s;
+	float: left;
+	border: none;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+	background-color: #ddd;
+	cursor: pointer;
+}
+
+.dropbtn:hover .dropdown-content {display: block;}
+
+/* Dark Theme */
+.darkTheme {
+	background-color:#111213;
+	color: white;
+	text-shadow: 2px 2px px black;
+}
+
+.darkNavBar {
+	background: rgb(255, 255, 255, 0.6);
+	color: white;
+}
+
+.darkNavBar a,
+.darkNavBar .dropbtn {
+	color: white;
+}
+
+.darkNavBar .dropdown-content {
+	background-color: rgb(255, 255, 255, 0.4);
+}
+
+/* Navigation ends here */
+
+
+/* Portfolio Section*/
+
+.row {
+	margin: 10px -9px;
+	text-align: justify;
+}
+
+/* Will add a padding between each column so that it will look tidier.*/
+.row,
+.row > .column {
+	padding: 3px;
+}
+
+.column {
+	float: left;
+	width: 45%;
+}
+
+.row:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+/* These are for adjusting to lesser content per column if the user screen is too small */
+@media screen and (max-width: 900px) {
+	.column{
+		width: 50%;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	.column{
+		width: 100%;
+	}
+}
+
+/* The container for the contents */
+.pfContainer{
+	
+}
+
+.container,
+.vidContainer {
+	padding: 10px;
+	position: relative;
+}
+
+/* Make the text pops up */
+.overlayText {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.7);
+  color: black;
+}
+
+.container:hover .overlayText {
+	opacity: 1;
+	cursor: pointer;
+}
+
+.container:hover video {
+	display: block;
+}
+
+.text {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+  text-shadow: 2px 2px 0px red;	
+}
+
+
+
+.center {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 50%;
+}
+
+.scrollUpArrow {
+	position: fixed;
+	right: 10px;
+	bottom: 10px;
+	max-height: 10%;
+	max-width: 10%;
+	z-index: 100;
+	opacity: 0;
+	transform: translateY(100px);
+	transition: all 0.5 ease;
+}
+
+.showArrow {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+.selfPicture {
+	padding: 40px;
+	max-width: 20%;
+	max-height: 20%;
+	float: right;
+}
+
+.introduction {
+		padding: 30px;
+		font-size : 20px;
+}
+
+.collapsible {
+	background-color: #309c7b;
+	color: white;
+	cursor: pointer;
+	padding: 20px;
+	width: 100%;
+	border: none;
+	text-align: left;
+	outline: none;
+	font-size: 20px;
+	
+}
+
+.active, .collapsible:hover {
+	background-color: #1a6634;
+}
+
+.active:after {
+	content: "\2212";
+}
+
+.collapsibleContent {
+	padding: 0 18px;
+	max-height: 0;
+	overflow: hidden;
+	transition: max-height 0.2s ease-out;
+	background-color: #5bd497;
+}
+
+table, th, td {
+border:1px solid black;
+padding: 8px;
+text-align: left;
+}
+
+table {
+width: 50%;
+margin-left: auto;
+margin-right: auto;
+}
+
+.slideshow-container{
+	max-width: 400px;
+	position: relative;
+	margin: auto;
+	float: right;
+	right: 120px;
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+.mySlides {
+	display: none;
+}
+
+.mySlides img{
+	height: 100%;
+	max-width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.floatLeft {
+	float: left;
+}
+
+.floatRight {
+	float: right;
+}
+
+.smallPicHeight > * {
+	max-height: 100px;
+}
+
+.smallPicWidth {
+	max-width: 500px;
+}
+
+
