@@ -67,8 +67,7 @@
 
         .slideshow {
             display: flex;
-            width: 100%;
-            transition: transform 1s ease-in-out; /* Smooth sliding transition *
+            transition: transform 1s ease-in-out;
         }
 
         .slide {
@@ -104,8 +103,8 @@
     <div class="slideshow-container">
         <div class="slideshow">
             <div class="slide"><img src="images/screenshot_1.png" alt="Model Screenshot 1"></div>
-            <div class="slide"><img src="images/screenshot_2.png" alt="Image 2"></div>
-            <div class="slide"><img src="images/screenshot_3.png" alt="Image 3"></div>
+            <div class="slide"><img src="image2.jpg" alt="Image 2"></div>
+            <div class="slide"><img src="image3.jpg" alt="Image 3"></div>
             <!-- Add more slides as needed -->
         </div>
     </div>
@@ -119,7 +118,6 @@
         const slideshow = document.querySelector('.slideshow');
         const slides = document.querySelectorAll('.slide');
         let currentIndex = 0;
-        const slideWidth = slides[0].clientWidth;
 
         function playAudio() {
             const sound = new Howl({
