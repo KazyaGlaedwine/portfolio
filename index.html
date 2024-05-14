@@ -57,9 +57,12 @@
 
         .slideshow-container {
             width: 60%;
-            margin: 100px auto 0; /* Adjust the top margin to ensure it is below the navbar */
+            margin: 100px auto 0;
             overflow: hidden;
             position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         .slideshow {
@@ -70,11 +73,13 @@
 
         .slide {
             min-width: 100%;
+            box-sizing: border-box;
         }
 
         .slide img {
             width: 100%;
             display: block;
+            object-fit: contain;
         }
     </style>
 </head>
