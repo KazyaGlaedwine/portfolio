@@ -121,6 +121,15 @@
     height: 100%;
 }
 
+.hidden {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.show {
+    opacity: 1;
+}
+	    
 .clock {
     font-size: 2em; /* Specific font size in pixels */
     color: white;
@@ -213,6 +222,9 @@ h2 {
             00:00:00
         </div>
     </div>
+	        <div class="hidden">Element 1</div>
+    <div class="hidden">Element 2</div>
+    <div class="hidden">Element 3</div>
 	<h2>2D Art / Illustration</h2>
 	<div class="flex-container">
   <div>1</div>
@@ -304,6 +316,19 @@ h2 {
 
 setInterval(updateClock, 1000);
 updateClock(); // Initial call to set the clock immediately
+
+	    const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if(entry.isIntersecting) {
+            entry.target.classList.add('show');
+        } else {
+            entry.target.classList.remove('show');
+        }
+    });
+});
+
+const hiddenElements = document.querySelectorAll('.hidden');
+hiddenElements.forEach((el) => observer.observe(el));
     </script>
 </body>
 
