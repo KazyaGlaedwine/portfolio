@@ -1,17 +1,19 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-<meta charset="UTF-8">
-<title>Home</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
 
-<!-- Using Howler.js from a CDN -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"></script>
+    <!-- Using Howler.js from a CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"></script>
 
     <style>
         body {
             margin: 0;
             padding: 0;
+            font-family: Arial, sans-serif;
         }
 
         .video-background {
@@ -28,16 +30,16 @@
             object-fit: cover;
             width: 100%;
             height: 100%;
-            pointer-events: none; /* Prevents the video from being clickable */
+            pointer-events: none;
         }
 
         .navbar {
             overflow: hidden;
-            background-color: rgba(0, 0, 0, 0.5); /* Added background color with opacity */
+            background-color: rgba(0, 0, 0, 0.5);
             position: fixed;
             top: 0;
             width: 100%;
-            z-index: 1; /* Set a higher z-index to appear above the video */
+            z-index: 1;
         }
 
         .navbar a {
@@ -53,33 +55,33 @@
             background-color: #111;
         }
 
-	.slideshow-container {
-	    width: 100%;
-	    overflow: hidden;
-	    position: relative;
-	}
-	
-	.slideshow {
-	    display: flex;
-	    width: 100%;
-	}
-	
-	.slide {
-	    min-width: 100%;
-	    transition: transform 0.5s ease-in-out;
-	}
-	
-	.slide img {
-	    width: 100%;
-	    display: block;
-	}
-	    
+        .slideshow-container {
+            width: 80%;
+            margin: 100px auto 0; /* Adjust the top margin to ensure it is below the navbar */
+            overflow: hidden;
+            position: relative;
+        }
+
+        .slideshow {
+            display: flex;
+            width: 100%;
+        }
+
+        .slide {
+            min-width: 100%;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .slide img {
+            width: 100%;
+            display: block;
+        }
     </style>
 </head>
 
 <body>
     <div class="video-background">
-	<!-- Credit / https://motionbgs.com/retro-city-->
+        <!-- Credit / https://motionbgs.com/retro-city-->
         <video autoplay muted loop poster="cityBackground.png">
             <source src="cityBackground.mp4" type="video/mp4">
         </video>
@@ -87,65 +89,65 @@
 
     <div class="navbar">
         <a class="active" href="index.html">Home</a>
-		<a href="#">2D Art / Illustration</a>
+        <a href="#">2D Art / Illustration</a>
         <a href="#">3D Modeling</a>
         <a href="#">Game Development</a>
         <a href="#resume">Resume</a>
         <a href="#contactme">Contact Me</a>
     </div>
-	
-	<div class="slideshow-container">
-		<div class="slideshow">
+
+    <div class="slideshow-container">
+        <div class="slideshow">
             <div class="slide"><img src="images/screenshot_1.png" alt="Model Screenshot 1"></div>
             <div class="slide"><img src="image2.jpg" alt="Image 2"></div>
             <div class="slide"><img src="image3.jpg" alt="Image 3"></div>
             <!-- Add more slides as needed -->
-		</div>
-	</div>
-<audio id="backgroundMusic" autoplay loop>
-    <source src="bgm/Rainy.mp3" type="audio/mp3"> <!-- Use "audio/mpeg" for MP3 files -->
-</audio>
+        </div>
+    </div>
 
-<script>
-const slideshow = document.querySelector('.slideshow');
-const slides = document.querySelectorAll('.slide');
-let currentIndex = 0;
-const slideWidth = slides[0].clientWidth;
-	
-function playAudio() {
+    <audio id="backgroundMusic" autoplay loop>
+        <source src="bgm/Rainy.mp3" type="audio/mp3">
+        <!-- Use "audio/mpeg" for MP3 files -->
+    </audio>
+
+    <script>
+        const slideshow = document.querySelector('.slideshow');
+        const slides = document.querySelectorAll('.slide');
+        let currentIndex = 0;
+        const slideWidth = slides[0].clientWidth;
+
+        function playAudio() {
             const sound = new Howl({
-                src: ['bgm/Rainy.mp3'], // Path to your MP3 file
+                src: ['bgm/Rainy.mp3'],
                 autoplay: true,
                 loop: true,
-                volume: 0.5, // Adjust volume as needed (0.0 to 1.0)
-                onend: function() {
-                    console.log('Audio ended'); // Optional callback when audio ends
+                volume: 0.5,
+                onend: function () {
+                    console.log('Audio ended');
                 },
-                onload: function() {
-                    console.log('Audio loaded'); // Optional callback when audio is loaded
+                onload: function () {
+                    console.log('Audio loaded');
                 },
-                onloaderror: function(error) {
-                    console.error('Audio load error:', error); // Optional callback for load errors
+                onloaderror: function (error) {
+                    console.error('Audio load error:', error);
                 }
             });
         }
 
-        // Wait for the DOM content to be fully loaded
-        document.addEventListener('DOMContentLoaded', function() {
-            playAudio(); // Call the playAudio function when DOMContentLoaded event fires
+        document.addEventListener('DOMContentLoaded', function () {
+            playAudio();
         });
 
-function showNextSlide() {
-    currentIndex++;
-    if (currentIndex >= slides.length) {
-        currentIndex = 0;
-    }
-    slideshow.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
-}
+        function showNextSlide() {
+            currentIndex++;
+            if (currentIndex >= slides.length) {
+                currentIndex = 0;
+            }
+            slideshow.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+        }
 
-setInterval(showNextSlide, 3000); // Change slide every 3 seconds
-</script>
-
+        setInterval(showNextSlide, 3000); // Change slide every 3 seconds
+    </script>
 </body>
 
 </html>
