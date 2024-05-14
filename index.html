@@ -1,8 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description"
+      content="Kazya's Portfolio,
+      Someone who wants to be all-rounded in every skill to become Jack of a card.
+      Featuring product showcases, displaying qualification of skills, education, experiences, proficiencies and so on.
+      2D Artist, 3D Artist, C, C#, C++, Blueprints, HTML, CSS, Javascript Programming.">
+
+    <meta name="keywords"
+      content="2D Artist, 3D Artist, Portfolio, Kazya, CV, Programmer, Freelancer">
+
+    <meta name="robots"
+      content="index, follow">
+
+    <meta name="author"
+      content="Kazya Glaedwine">
+	  
     <title>Home</title>
 
     <!-- Using Howler.js from a CDN -->
@@ -85,116 +101,83 @@
             display: block;
             object-fit: contain; /* Contain within the slide */
         }
-
-        .loading {
-            opacity: 0.5;
-            background-color: rgba(255, 255, 255, 0.8);
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
     </style>
 </head>
+
 <body>
-<div class="video-background">
-    <!-- Credit / https://motionbgs.com/retro-city-->
-    <video autoplay muted loop poster="cityBackground.png">
-        <source src="cityBackground.mp4" type="video/mp4">
-    </video>
-</div>
-
-<div class="navbar">
-    <a class="active" href="index.html">Home</a>
-    <a href="#">2D Art / Illustration</a>
-    <a href="#">3D Modeling</a>
-    <a href="#">Game Development</a>
-    <a href="#resume">Resume</a>
-    <a href="#contactme">Contact Me</a>
-</div>
-
-<div class="slideshow-container loading">
-    <div class="slideshow">
-        <div class="slide" data-src="images/screenshot_1.png" alt="Model Screenshot"></div>
-        <div class="slide" data-src="images/screenshot_2.png" alt="Random Sketch"></div>
-        <div class="slide" data-src="images/screenshot_3.png" alt="Echoes Game Screenshot"></div>
-        <div class="slide" data-src="images/screenshot_4.png" alt="none"></div>
-        <div class="slide" data-src="images/screenshot_5.png" alt="none"></div>
-        <div class="slide" data-src="images/screenshot_6.png" alt="none"></div>
-        <div class="slide" data-src="images/3d_1.png" alt="none"></div>
-        <div class="slide" data-src="images/3d_2.png" alt="none"></div>
-        <div class="slide" data-src="images/gif_1.gif" alt="none"></div>
-        <div class="slide" data-src="images/render_1.png" alt="none"></div>
-        <!-- Add more slides as needed -->
+    <div class="video-background">
+        <!-- Credit / https://motionbgs.com/retro-city-->
+        <video autoplay muted loop poster="cityBackground.png">
+            <source src="cityBackground.mp4" type="video/mp4">
+        </video>
     </div>
-</div>
 
-<audio id="backgroundMusic" autoplay loop>
-    <source src="bgm/Rainy.mp3" type="audio/mp3">
-    <!-- Use "audio/mpeg" for MP3 files -->
-</audio>
+    <div class="navbar">
+        <a class="active" href="index.html">Home</a>
+        <a href="#">2D Art / Illustration</a>
+        <a href="#">3D Modeling</a>
+        <a href="#">Game Development</a>
+        <a href="#resume">Resume</a>
+        <a href="#contactme">Contact Me</a>
+    </div>
 
-<script>
-    const slideshow = document.querySelector('.slideshow');
-    const slides = document.querySelectorAll('.slide');
-    let currentIndex = 0;
+    <div class="slideshow-container">
+        <div class="slideshow">
+            <div class="slide"><img src="images/screenshot_1.png" alt="Model Screenshot"></div>
+            <div class="slide"><img src="images/screenshot_2.png" alt="Random Sketch"></div>
+            <div class="slide"><img src="images/screenshot_3.png" alt="Echoes Game Screenshot"></div>
+            <div class="slide"><img src="images/screenshot_4.png" alt="none"></div>
+            <div class="slide"><img src="images/screenshot_5.png" alt="none"></div>
+            <div class="slide"><img src="images/screenshot_6.png" alt="none"></div>
+            <div class="slide"><img src="images/3d_1.png" alt="none"></div>
+            <div class="slide"><img src="images/3d_2.png" alt="none"></div>
+            <div class="slide"><img src="images/gif_1.gif" alt="none"></div>
+            <div class="slide"><img src="images/render_1.png" alt="none"></div>
+            <!-- Add more slides as needed -->
+        </div>
+    </div>
 
-    function playAudio() {
-        const sound = new Howl({
-            src: ['bgm/Rainy.mp3'],
-            autoplay: true,
-            loop: true,
-            volume: 0.25,
-            onend: function () {
-                console.log('Audio ended');
-            },
-            onload: function () {
-                console.log('Audio loaded');
-                const loadingContainer = document.querySelector('.loading');
-                loadingContainer.classList.remove('loading');
-            },
-            onloaderror: function (error) {
-                console.error('Audio load error:', error);
-            }
-        });
-    }
+    <audio id="backgroundMusic" autoplay loop>
+        <source src="bgm/Rainy.mp3" type="audio/mp3">
+        <!-- Use "audio/mpeg" for MP3 files -->
+    </audio>
 
-    document.addEventListener('DOMContentLoaded', function () {
-        playAudio();
-        loadImages();
-    });
+    <script>
+        const slideshow = document.querySelector('.slideshow');
+        const slides = document.querySelectorAll('.slide');
+        let currentIndex = 0;
 
-    function loadImages() {
-        slides.forEach(slide => {
-            const img = slide.querySelector('img');
-            if (img.getAttribute('data-src')) {
-                const src = img.getAttribute('data-src');
-                img.src = src;
-                img.onload = function () {
-                    slide.classList.add('loaded');
-                };
-            }
-        });
-    }
-
-    function showNextSlide() {
-        currentIndex++;
-        if (currentIndex >= slides.length) {
-            currentIndex = 0;
+        function playAudio() {
+            const sound = new Howl({
+                src: ['bgm/Rainy.mp3'],
+                autoplay: true,
+                loop: true,
+                volume: 0.2,
+                onend: function () {
+                    console.log('Audio ended');
+                },
+                onload: function () {
+                    console.log('Audio loaded');
+                },
+                onloaderror: function (error) {
+                    console.error('Audio load error:', error);
+                }
+            });
         }
-        slides.forEach(slide => {
-            slide.classList.remove('active');
-            slide.classList.add('inactive');
-        });
-        slides[currentIndex].classList.add('active');
-        slideshow.style.transform = `translateX(-${currentIndex * 100}%)`;
-    }
 
-            setInterval(showNextSlide, 3000); // Change slide every 3 seconds
+        document.addEventListener('DOMContentLoaded', function () {
+            playAudio();
+        });
+
+        function showNextSlide() {
+            currentIndex++;
+            if (currentIndex >= slides.length) {
+                currentIndex = 0;
+            }
+            slideshow.style.transform = `translateX(-${currentIndex * 100}%)`;
+        }
+
+        setInterval(showNextSlide, 3000); // Change slide every 3 seconds
     </script>
 </body>
 
