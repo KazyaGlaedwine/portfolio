@@ -207,7 +207,7 @@ p {
         <a href="#">3D Modeling</a>
         <a href="#">Game Development</a>
 	    <a href="#">Graphic Design</a>
-        <a href="#resume">Resume</a>
+        <a href="#resume" id="pdfButton">Resume</a>
         <a href="#contactme">Contact Me</a>
     </div>
 </nav>
@@ -346,6 +346,10 @@ updateClock(); // Initial call to set the clock immediately
 
 const hiddenElements = document.querySelectorAll('.hidden');
 hiddenElements.forEach((el) => observer.observe(el));
+
+	    document.getElementById('pdfButton').addEventListener('click', function() {
+            window.open('Resume.pdf', '_blank');
+        });
     </script>
 </body>
 
