@@ -4,21 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description"
-      content="Kazya's Portfolio,
-      Someone who wants to be all-rounded in every skill to become Jack of a card.
-      Featuring product showcases, displaying qualification of skills, education, experiences, proficiencies and so on.
-      2D Artist, 3D Artist, C, C#, C++, Blueprints, HTML, CSS, Javascript Programming.">
+    <meta name="description"
+        content="Kazya's Portfolio, Someone who wants to be all-rounded in every skill to become Jack of a card. Featuring product showcases, displaying qualification of skills, education, experiences, proficiencies and so on. 2D Artist, 3D Artist, C, C#, C++, Blueprints, HTML, CSS, Javascript Programming.">
 
     <meta name="keywords"
-      content="2D Artist, 3D Artist, Portfolio, Kazya, CV, Programmer, Freelancer">
+        content="2D Artist, 3D Artist, Portfolio, Kazya, CV, Programmer, Freelancer">
 
     <meta name="robots"
-      content="index, follow">
+        content="index, follow">
 
     <meta name="author"
-      content="Kazya Glaedwine">
-	  
+        content="Kazya Glaedwine">
+
     <title>Home</title>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -73,7 +70,8 @@
 
         .slideshow-container {
             width: 60%;
-            max-height: 400px; /* Set the maximum height for the slideshow container */
+            max-height: 400px;
+            /* Set the maximum height for the slideshow container */
             margin: 100px auto 0;
             overflow: hidden;
             position: relative;
@@ -96,73 +94,100 @@
         }
 
         .slide img {
-            max-width: 80%; /* Scale the image width */
-            max-height: 80%; /* Scale the image height */
-            height: auto; /* Maintain aspect ratio */
+            max-width: 80%;
+            /* Scale the image width */
+            max-height: 80%;
+            /* Scale the image height */
+            height: auto;
+            /* Maintain aspect ratio */
             display: block;
-            object-fit: contain; /* Contain within the slide */
+            object-fit: contain;
+            /* Contain within the slide */
         }
 
-	    .flex-container {
-  display: flex;
-  background-color: rgba(0, 0, 0, 0.8); 
-		    border-radius: 10px; /* Optional: Add rounded corners */
-}
+        .flex-container {
+            display: flex;
+            background-color: rgba(0, 0, 0, 0.8);
+            border-radius: 10px;
+            /* Optional: Add rounded corners */
+        }
 
-.flex-container > div {
-  background-color: rgba(255, 255, 255, 0.8); 
-  margin: 10px;
-  padding: 20px;
-  font-size: 30px;
-	border-radius: 10px; /* Optional: Add rounded corners */
-}
-.clock-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-}
+        .flex-container>div {
+            background-color: rgba(255, 255, 255, 0.8);
+            margin: 10px;
+            padding: 20px;
+            font-size: 30px;
+            border-radius: 10px;
+            /* Optional: Add rounded corners */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            max-width: 300px;
+            max-height: 300px;
+        }
 
-.hidden {
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
-}
+        .flex-container img,
+        .flex-container video {
+            max-width: 100%;
+            max-height: 100%;
+            height: auto;
+            width: auto;
+        }
 
-.show {
-    opacity: 1;
-}
-	    
-.clock {
-    font-size: 2em; /* Specific font size in pixels */
-    color: white;
-    background: rgba(0, 0, 0, 0.5); /* Transparent background */
-    padding: 20px 40px;
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-    text-align: center;
-    width: fit-content; /* Adjust width to fit content */
-}
+        .clock-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+        }
 
-h1 {
-    text-align: center;
-    font-size: 30px;
-    color: white;
-}
+        .hidden {
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
 
-h2 {
-    text-align: center;
-    color: white;
-}
-p {
-    text-align: left;
-    background-color: rgba(0, 0, 0, 0.8); /* 80% black background */
-    color: white; /* White text for better contrast */
-    padding: 10px; /* Optional: Add some padding */
-    border-radius: 5px; /* Optional: Add rounded corners */
-}
+        .show {
+            opacity: 1;
+        }
 
+        .clock {
+            font-size: 2em;
+            /* Specific font size in pixels */
+            color: white;
+            background: rgba(0, 0, 0, 0.5);
+            /* Transparent background */
+            padding: 20px 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            width: fit-content;
+            /* Adjust width to fit content */
+        }
 
-.content {
+        h1 {
+            text-align: center;
+            font-size: 30px;
+            color: white;
+        }
+
+        h2 {
+            text-align: center;
+            color: white;
+        }
+
+        p {
+            text-align: left;
+            background-color: rgba(0, 0, 0, 0.8);
+            /* 80% black background */
+            color: white;
+            /* White text for better contrast */
+            padding: 10px;
+            /* Optional: Add some padding */
+            border-radius: 5px;
+            /* Optional: Add rounded corners */
+        }
+
+        .content {
             flex: 1;
             padding: 20px;
         }
@@ -188,7 +213,6 @@ p {
         .footer a .fab {
             transition: color 0.3s;
         }
-	    
     </style>
 </head>
 
@@ -200,91 +224,98 @@ p {
         </video>
     </div>
 
-	<nav>
-    <div class="navbar">
-        <a class="active" href="index.html">Home</a>
-        <a href="#">2D Art / Illustration</a>
-        <a href="#">3D Modeling</a>
-        <a href="gamedevelopment.html">Game Development</a>
-	    <a href="#">Animation</a>
-	    <a href="#">Graphic Design</a>
-        <a href="#resume" id="pdfButton">Resume</a>
-        <a href="#contactme">Contact Me</a>
-    </div>
-</nav>
+    <nav>
+        <div class="navbar">
+            <a class="active" href="index.html">Home</a>
+            <a href="#">2D Art / Illustration</a>
+            <a href="#">3D Modeling</a>
+            <a href="gamedevelopment.html">Game Development</a>
+            <a href="#">Animation</a>
+            <a href="#">Graphic Design</a>
+            <a href="#resume" id="pdfButton">Resume</a>
+            <a href="#contactme">Contact Me</a>
+        </div>
+    </nav>
     <div class="content">
-    <div class="slideshow-container">
-        <div class="slideshow">
-            <div class="slide"><img src="images/screenshot_1.png" alt="Model Screenshot"></div>
-            <div class="slide"><img src="images/screenshot_2.png" alt="Random Sketch"></div>
-            <div class="slide"><img src="images/screenshot_3.png" alt="Echoes Game Screenshot"></div>
-            <div class="slide"><img src="images/screenshot_4.png" alt="none"></div>
-            <div class="slide"><img src="images/screenshot_5.png" alt="none"></div>
-            <div class="slide"><img src="images/screenshot_6.png" alt="none"></div>
-            <div class="slide"><img src="images/3d_1.png" alt="none"></div>
-            <div class="slide"><img src="images/3d_2.png" alt="none"></div>
-            <div class="slide"><img src="images/gif_1.gif" alt="none"></div>
-            <div class="slide"><img src="images/render_1.png" alt="none"></div>
-            <!-- Add more slides as needed -->
+        <div class="slideshow-container">
+            <div class="slideshow">
+                <div class="slide"><img src="images/screenshot_1.png" alt="Model Screenshot"></div>
+                <div class="slide"><img src="images/screenshot_2.png" alt="Random Sketch"></div>
+                <div class="slide"><img src="images/screenshot_3.png" alt="Echoes Game Screenshot"></div>
+                <div class="slide"><img src="images/screenshot_4.png" alt="none"></div>
+                <div class="slide"><img src="images/screenshot_5.png" alt="none"></div>
+                <div class="slide"><img src="images/screenshot_6.png" alt="none"></div>
+                <div class="slide"><img src="images/3d_1.png" alt="none"></div>
+                <div class="slide"><img src="images/3d_2.png" alt="none"></div>
+                <div class="slide"><img src="images/gif_1.gif" alt="none"></div>
+                <div class="slide"><img src="images/render_1.png" alt="none"></div>
+                <!-- Add more slides as needed -->
+            </div>
+        </div>
+
+        <br>
+        <h1>Home</h1>
+        <div class="clock-container">
+            <div class="clock" id="clock">
+                00:00:00
+            </div>
+        </div>
+        <h1>Introduction</h1>
+        <p>Greetings! I am Wong Jing Haw! I am a student currently studying in YPC International College for BSc. Hons
+            Multimedia Computing! I am passionate towards learning new knowledge and willing to explore and acquire new
+            experiences from work!</p>
+        <p>I am also a self-taught artist for both 2D and 3D, to which assisted in my development of my final year
+            project, a 3D First Person Horror Game through using Unreal Engine 5.</p>
+        <p>As a Multimedia Computing student, I am also experienced with using software such as Adobe Premiere Pro, Adobe
+            Photoshop, Adobe Animate, Adobe After Effects, Adobe InDesign, Adobe Illustrator, Clip Studio Paint, Audacity
+            and so on.</p>
+        <p>The programming languages I am familiar with are, HTML, CSS, JavaScript, PHP, C, C#, C++, Java, and Lua. </p>
+        <p>I am fluent in English, Chinese, Cantonese and know the basic of Malay language.</p>
+
+        <h2>2D Art / Illustration</h2>
+        <div class="flex-container hidden">
+            <div><img src="images/screenshot_2.png" alt="Random Sketch"></div>
+            <div><img src="images/render_1.png" alt="none"></div>
+            <div>3</div>
+        </div>
+        <h2>3D Modeling</h2>
+        <div class="flex-container hidden">
+            <div><img src="images/screenshot_1.png" alt="Random Sketch"></div>
+            <div><img src="images/3d_1.png" alt="none"></div>
+            <div><img src="images/3d_2.png" alt="none"></div>
+        </div>
+        <h2>Game Development</h2>
+        <div class="flex-container hidden">
+            <div><img src="images/screenshot_3.png" alt="Random Sketch"></div>
+            <div>2</div>
+            <div>3</div>
+        </div>
+        <h2>Web Development</h2>
+        <div class="flex-container hidden">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+        </div>
+        <h2>Animation</h2>
+        <div class="flex-container hidden">
+            <div><img src="images/gif_1.gif" alt="none"></div>
+            <div>
+                <video width="640" height="360" controls autoplay loop muted poster="path/to/your/poster.jpg">
+                    <source src="images/AnimationRush_1.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div>3</div>
+        </div>
+        <h2>Graphic Design</h2>
+        <div class="flex-container hidden">
+            <div><img src="images/screenshot_5.png" alt="none"></div>
+            <div><img src="images/screenshot_6.png" alt="none"></div>
+            <div>3</div>
         </div>
     </div>
 
-<br>
-	<h1>Home</h1>
-<div class="clock-container">
-        <div class="clock" id="clock">
-            00:00:00
-        </div>
-    </div>
-	    <h1>Introduction</h1>
-	    <p>Greetings! I am Wong Jing Haw! I am a student currently studying in YPC International College for BSc. Hons Multimedia Computing! I am passionate towards learning new knowledge and willing to explore and acquire new experiences from work!</p>
-	    <p>I am also a self-taught artist for both 2D and 3D, to which assisted in my development of my final year project, a 3D First Person Horror Game through using Unreal Engine 5.</p>
-	    <p>As a Multimedia Computing student, I am also experienced with using software such as Adobe Premiere Pro, Adobe Photoshop, Adobe Animate, Adobe After Effects, Adobe InDesign, Adobe Illustrator, Clip Studio Paint, Audacity and so on.</p>
-	    <p>The programming languages I am familiar with are, HTML, CSS, JavaScript, PHP, C, C#, C++, Java, and Lua. </p>
-	    <p>I am fluent in English, Chinese, Cantonese and know the basic of Malay language.</p>
-	    
-	<h2>2D Art / Illustration</h2>
-	<div class="flex-container hidden">
-  <div><img src="images/screenshot_2.png" alt="Random Sketch"></div>
-  <div><img src="images/render_1.png" alt="none"></div>
-  <div>3</div>  
-</div>
-	<h2>3D Modeling</h2>
-	<div class="flex-container hidden">
-  <div><img src="images/screenshot_1.png" alt="Random Sketch"></div>
-  <div><img src="images/3d_1.png" alt="none"></div>
-  <div><img src="images/3d_2.png" alt="none"></div>  
-</div>
-	<h2>Game Development</h2>
-	<div class="flex-container hidden">
-  <div><img src="images/screenshot_3.png" alt="Random Sketch"></div>
-  <div>2</div>
-  <div>3</div>  
-</div>
-	<h2>Web Development</h2>
-	<div class="flex-container hidden">
-  <div>1</div>
-  <div>2</div>
-  <div>3</div>  
-</div>
-	    	<h2>Animation</h2>
-	<div class="flex-container hidden">
-  <div><img src="images/gif_1.gif" alt="none"></div>
-  <div><video width="640" height="360" controls autoplay loop muted poster="path/to/your/poster.jpg">
-        <source src="images/AnimationRush_1.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video></div>
-  <div>3</div>  
-</div>
-	    	<h2>Graphic Design</h2>
-	<div class="flex-container hidden">
-  <div><img src="images/screenshot_5.png" alt="none"</div>
-  <div><img src="images/screenshot_6.png" alt="none"</div>
-  <div>3</div>  
-</div>
-    </div>
-		
-	<footer class="footer">
+    <footer class="footer">
         <a href="https://www.instagram.com/fleshskeleton/" target="_blank">
             <i class="fab fa-instagram"></i>
         </a>
@@ -295,7 +326,7 @@ p {
             <i class="fab fa-deviantart"></i>
         </a>
     </footer>
-	
+
     <audio id="backgroundMusic" autoplay loop>
         <source src="bgm/Rainy.mp3" type="audio/mp3">
         <!-- Use "audio/mpeg" for MP3 files -->
@@ -338,32 +369,32 @@ p {
 
         setInterval(showNextSlide, 3000); // Change slide every 3 seconds
 
-	    function updateClock() {
-    const clockElement = document.getElementById('clock');
-    const now = new Date();
-    const hours = String(now.getHours()).padStart(2, '0');
-    const minutes = String(now.getMinutes()).padStart(2, '0');
-    const seconds = String(now.getSeconds()).padStart(2, '0');
-    clockElement.textContent = `${hours}:${minutes}:${seconds}`;
-}
-
-setInterval(updateClock, 1000);
-updateClock(); // Initial call to set the clock immediately
-
-	    const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-        if(entry.isIntersecting) {
-            entry.target.classList.add('show');
-        } else {
-            entry.target.classList.remove('show');
+        function updateClock() {
+            const clockElement = document.getElementById('clock');
+            const now = new Date();
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const seconds = String(now.getSeconds()).padStart(2, '0');
+            clockElement.textContent = `${hours}:${minutes}:${seconds}`;
         }
-    });
-});
 
-const hiddenElements = document.querySelectorAll('.hidden');
-hiddenElements.forEach((el) => observer.observe(el));
+        setInterval(updateClock, 1000);
+        updateClock(); // Initial call to set the clock immediately
 
-	    document.getElementById('pdfButton').addEventListener('click', function() {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                } else {
+                    entry.target.classList.remove('show');
+                }
+            });
+        });
+
+        const hiddenElements = document.querySelectorAll('.hidden');
+        hiddenElements.forEach((el) => observer.observe(el));
+
+        document.getElementById('pdfButton').addEventListener('click', function () {
             window.open('Resume.pdf', '_blank');
         });
     </script>
