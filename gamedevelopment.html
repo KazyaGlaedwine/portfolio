@@ -32,7 +32,7 @@
             font-family: Arial, sans-serif;
         }
 
-	            .navbar {
+	    .navbar {
             overflow: hidden;
             background-color: rgba(0, 0, 0, 0.5);
             position: fixed;
@@ -71,27 +71,26 @@
             pointer-events: none;
         }
 
+        h1 {
+            text-align: center;
+            font-size: 30px;
+            color: white;
+        }
 
-h1 {
-    text-align: center;
-    font-size: 30px;
-    color: white;
-}
+        h2 {
+            text-align: center;
+            color: white;
+        }
+        
+        p {
+            text-align: left;
+            background-color: rgba(0, 0, 0, 0.8); /* 80% black background */
+            color: white; /* White text for better contrast */
+            padding: 10px; /* Optional: Add some padding */
+            border-radius: 5px; /* Optional: Add rounded corners */
+        }
 
-h2 {
-    text-align: center;
-    color: white;
-}
-p {
-    text-align: left;
-    background-color: rgba(0, 0, 0, 0.8); /* 80% black background */
-    color: white; /* White text for better contrast */
-    padding: 10px; /* Optional: Add some padding */
-    border-radius: 5px; /* Optional: Add rounded corners */
-}
-
-
-.content {
+        .content {
             flex: 1;
             padding: 20px;
         }
@@ -103,7 +102,7 @@ p {
             height: 0;
             overflow: hidden;
         }
-        .video-container iframe {
+        .video-container video {
             position: absolute;
             top: 0;
             left: 0;
@@ -145,36 +144,32 @@ p {
     </div>
 
 	<nav>
-    <div class="navbar">
-        <a href="index.html">Home</a>
-        <a href="#">2D Art / Illustration</a>
-        <a href="#">3D Modeling</a>
-        <a class="active" href="gamedevelopment.html">Game Development</a>
-	      <a href="#">Graphic Design</a>
-        <a href="#resume" id="pdfButton">Resume</a>
-        <a href="#contactme">Contact Me</a>
-    </div>
-</nav>
+        <div class="navbar">
+            <a href="index.html">Home</a>
+            <a href="#">2D Art / Illustration</a>
+            <a href="#">3D Modeling</a>
+            <a class="active" href="gamedevelopment.html">Game Development</a>
+	        <a href="#">Graphic Design</a>
+            <a href="#resume" id="pdfButton">Resume</a>
+            <a href="#contactme">Contact Me</a>
+        </div>
+    </nav>
+    
     <div class="content">
-<br>
-	<h1>Game Development</h1>
-	    <br>
-	    <h1>Final Year Project - Echoes</h1>
-	        <div class="video-container">
-        <iframe 
-            src="https://youtu.be/xNkc3SVST4Q" 
-            frameborder="0" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-            allowfullscreen>
-        </iframe>
-    </div>
-	    <p>Echoes is a first-person horror game developed using Unreal Engine 5 and Blender. It is only compatible for Windows platform.</p>
-	    
-
-	    
+        <br>
+        <h1>Game Development</h1>
+        <br>
+        <h1>Final Year Project - Echoes</h1>
+        <div class="video-container">
+            <video controls>
+                <source src="https://www.youtube.com/embed/xNkc3SVST4Q" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <p>Echoes is a first-person horror game developed using Unreal Engine 5 and Blender. It is only compatible for Windows platform.</p>
     </div>
 		
-	<footer class="footer">
+    <footer class="footer">
         <a href="https://www.instagram.com/fleshskeleton/" target="_blank">
             <i class="fab fa-instagram"></i>
         </a>
@@ -228,32 +223,32 @@ p {
 
         setInterval(showNextSlide, 3000); // Change slide every 3 seconds
 
-	    function updateClock() {
-    const clockElement = document.getElementById('clock');
-    const now = new Date();
-    const hours = String(now.getHours()).padStart(2, '0');
-    const minutes = String(now.getMinutes()).padStart(2, '0');
-    const seconds = String(now.getSeconds()).padStart(2, '0');
-    clockElement.textContent = `${hours}:${minutes}:${seconds}`;
-}
-
-setInterval(updateClock, 1000);
-updateClock(); // Initial call to set the clock immediately
-
-	    const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-        if(entry.isIntersecting) {
-            entry.target.classList.add('show');
-        } else {
-            entry.target.classList.remove('show');
+        function updateClock() {
+            const clockElement = document.getElementById('clock');
+            const now = new Date();
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const seconds = String(now.getSeconds()).padStart(2, '0');
+            clockElement.textContent = `${hours}:${minutes}:${seconds}`;
         }
-    });
-});
 
-const hiddenElements = document.querySelectorAll('.hidden');
-hiddenElements.forEach((el) => observer.observe(el));
+        setInterval(updateClock, 1000);
+        updateClock(); // Initial call to set the clock immediately
 
-	    document.getElementById('pdfButton').addEventListener('click', function() {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                } else {
+                    entry.target.classList.remove('show');
+                }
+            });
+        });
+
+        const hiddenElements = document.querySelectorAll('.hidden');
+        hiddenElements.forEach((el) => observer.observe(el));
+
+        document.getElementById('pdfButton').addEventListener('click', function () {
             window.open('Resume.pdf', '_blank');
         });
     </script>
